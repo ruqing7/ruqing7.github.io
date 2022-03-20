@@ -22,11 +22,13 @@ Windows 搜索环境变量，将.exe文件路径保存到环境变量PATH
 1 hugo server 并在浏览器中输入网址http://localhost:1313/，查看网页效果
 如果觉得没有问题了便可以使用如下命令：
 1 hugo 如此一来网页便生成在默认的public子目录中了。
-4）拓展
-帮助文档： https://hexo.io/zh-cn/docs/
+当然更建议另一种方式，将网页生成在doc目录中
+1 2 3 4 5 # 将下面一行插入配置文件config.toml中 publishdir = "doc" # toml publishDir = docs # yaml # 运行 hugo 在将网站提交到gitbub之前，还需要在config.toml文件中修改baseURL:
+1 baseURL = 'http://ruqing7.github.io/' 4）拓展
+帮助文档： https://hexo.io/zh-cn/docs/，尤其是toml\yaml这类格式问题，分别给出了参考！
 1 2 layout: false #草稿，不渲染 hugo server -D #渲染草稿文件 如何修改配置修改配置文件，我将在后面讲到，这里先放部分参考链接
 markup 不得不说LoveIt 官方文档很详细： 3. 部署到服务器 girhub 新建仓库，命名方式为
-1 2 &lt;你的github用户名>.github.io # 例如我的：ruqing7.github.io 创建public文件夹
+1 2 &lt;你的github用户名>.github.io # 例如我的：ruqing7.github.io,注意不要生成readme 创建public文件夹
 1 hugo 把public与远程github仓库关联
 1 2 3 4 5 git init # 初始化本地代码仓 git remote add origin git@github.com:&lt;你的github用户名>/&lt;你的github用户名>.github.io.git git add . # 添加本地代码 git commit -m "first commit" # 提交本地代码 git push -u origin main # 上传代码 命令行上传完毕后，在浏览器网址栏打开链接 https://&lt;你的github用户名>.github.io/ 就可以看到我们自己的博客了~
 上传报错可以看这里： https://blog.csdn.net/qq_41999617/article/details/83691324
@@ -38,6 +40,9 @@ markup 不得不说LoveIt 官方文档很详细： 3. 部署到服务器 girhub 
 hugo 安装与部署： https://sspai.com/post/59904
 git常用命令： https://www.php.cn/tool/git/469391.html
 hugo博客搭建 ：https://www.sulvblog.cn/posts/blog/build_hugo
-hugo+lovelt: https://jellyzhang.github.io/ 超强</content></entry><entry><title>关于我</title><url>http://next.lisenhui.cn/about.html</url><categories/><tags/><content type="html"> 分享欲是最高级的浪漫
+hugo+lovelt: https://jellyzhang.github.io/ 超强
+如何使用Hugo在GitHub Pages上搭建免费个人网站： https://zhuanlan.zhihu.com/p/37752930
+超详细Hexo+Github博客搭建小白教程 https://godweiyang.com/2018/04/13/hexo-blog/
+用 Hugo + Coding 搭建静态博客：https://www.cnblogs.com/keatonlao/p/13179764.html</content></entry><entry><title>关于我</title><url>http://next.lisenhui.cn/about.html</url><categories/><tags/><content type="html"> 分享欲是最高级的浪漫
 这里是如卿，很高兴遇见你
 我将会在这里分享生活、学习上的收获。持续更新，常回来看看哦</content></entry></search>
