@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>利用hugo搭建博客，并挂载到github</title><url>http://next.lisenhui.cn/post/blog/</url><categories><category>软件安装</category></categories><tags><tag>个人博客</tag><tag>图床</tag><tag>git</tag></tags><content type="html"> 突然想搭建一个自己的个人博客，记录下自己的点滴收获与成长，时时擦拭。
+下面是我的配置过程
+安装git 1.官网下载对应版本安装包，Windows的以.exe结尾
+2.安装
+参考：Git安装教程（Windows安装超详细教程）
+3.配置
+在命令行输入
+1 2 3 4 5 6 7 8 # 创建本地密匙 ssh-keygen -t rsa -C "email@xxx.com" # 双引号内容为你自己注册账号时的邮箱 cat /c/Users/22079/.ssh/id_rsa.pub # 得到的密匙复制到github设置中的 SSH and GPG keys # 验证是否链接成功 ssh -T git@github.com # 全局配置 git config --global user.name "Your Name" git config --global user.email "email@example.com" --global参数表示会在这台机器上的所有git仓库使用该配置
+安装hugo 本文在windows环境下写成
+1）到github仓库下载对应版本
+2）解压，得到.exe文件
+3）将.exe文件配置到PATH
+Windows 搜索环境变量，将.exe文件路径保存到环境变量PATH
+使用hugo生成博客 1）新建博客
+进入想要放置博客的目录，右键点击git bash here， 输入hugo new site blog，可得到如下文件目录：
+1 2 3 4 5 6 7 8 blog ├── archetypes # 新文章默认模板 ├── config.toml # hugo配置文档 ├── content # 存放markdown格式文章 ├── data # 生成网站可用的数据文件，可用在模版中 ├── layouts # 生成网站时可用的模板 ├── static # 存放图像、CNAME、css、js等，发布后该目录下所有资源将处于网页根目录 └── themes # 存放下载的主题 使用下面的命令生成新的文章草稿：
+1 hugo new posts/first-post.md 2）下载主题
+在官网Hugo Themes选择想要的主题，会链接到github，下载相应主题的zip文件，解压后放到blog的themes文件夹下
+3）生成网站
+根据不同主题的使用说明，进行操作，eg:将examplesite文件里的内容替换到blog里
+现在使用如下命令建立本地服务器：
+1 hugo server 并在浏览器中输入网址http://localhost:1313/，查看网页效果
+如果觉得没有问题了便可以使用如下命令：
+1 hugo 如此一来网页便生成在默认的public子目录中了。
+4）拓展
+帮助文档： https://hexo.io/zh-cn/docs/
+1 2 layout: false #草稿，不渲染 hugo server -D #渲染草稿文件 如何修改配置修改配置文件，我将在后面讲到，这里先放部分参考链接
+markup 不得不说LoveIt 官方文档很详细： 3. 部署到服务器 girhub 新建仓库，命名方式为
+1 2 &lt;你的github用户名>.github.io # 例如我的：ruqing7.github.io 创建public文件夹
+1 hugo 把public与远程github仓库关联
+1 2 3 4 5 git init # 初始化本地代码仓 git remote add origin git@github.com:&lt;你的github用户名>/&lt;你的github用户名>.github.io.git git add . # 添加本地代码 git commit -m "first commit" # 提交本地代码 git push -u origin main # 上传代码 命令行上传完毕后，在浏览器网址栏打开链接 https://&lt;你的github用户名>.github.io/ 就可以看到我们自己的博客了~
+上传报错可以看这里： https://blog.csdn.net/qq_41999617/article/details/83691324
+4. picGo 细心的你也许发现，上传的图片显示不出来。这时你也许需要搭建一个图床，这里我使用的picGo
+4.1 下载 下载地址：https://github.com/Molunerfinn/PicGo/releases
+下载对应版本(windows是exe)并安装到本地
+4.2 搭建图床 可以参考： https://zhuanlan.zhihu.com/p/416251450
+如果使用typora，PicGo 路径要指定到 PicGo.exe 确保PicGo的监听端口为36677 5. 参考 git 教程： https://www.liaoxuefeng.com/wiki/896043488029600
+hugo 安装与部署： https://sspai.com/post/59904
+git常用命令： https://www.php.cn/tool/git/469391.html
+hugo博客搭建 ：https://www.sulvblog.cn/posts/blog/build_hugo
+hugo+lovelt: https://jellyzhang.github.io/ 超强</content></entry><entry><title>关于我</title><url>http://next.lisenhui.cn/about.html</url><categories/><tags/><content type="html"> 分享欲是最高级的浪漫
+这里是如卿，很高兴遇见你
+我将会在这里分享生活、学习上的收获。持续更新，常回来看看哦</content></entry></search>
